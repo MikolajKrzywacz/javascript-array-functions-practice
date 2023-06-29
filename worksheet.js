@@ -45,10 +45,27 @@ const firstName = characters.map((character) => {
 
 //***REDUCE***
 //1. Get total mass of all characters
+const totalMass = characters.reduce((acc, el) => {
+  return acc + el.mass;
+}, 0);
 //2. Get total height of all characters
+const totalHeight = characters.reduce((acc, el) => {
+  return acc + el.height;
+});
 //3. Get total number of characters by eye color
+const charactersByEyeColor = characters.reduce((acc, el) => {
+  const eyeColor = el.eye_color;
+  if (acc[eyeColor]) {
+    acc[eyeColor]++;
+  } else {
+    acc[eyeColor] = 1;
+  }
+  return acc;
+}, {});
 //4. Get total number of characters in all the character names
-
+const totalCharInCharacters = characters.reduce((acc, el) => {
+  return acc + el.name.length;
+}, 0);
 //***FILTER***
 //1. Get characters with mass greater than 100
 //2. Get characters with height less than 200
