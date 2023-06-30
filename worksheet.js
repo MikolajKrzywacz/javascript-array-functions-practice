@@ -68,10 +68,25 @@ const totalCharInCharacters = characters.reduce((acc, el) => {
 }, 0);
 //***FILTER***
 //1. Get characters with mass greater than 100
+const charactersWithMassGreaterThanHundred = characters.filter(
+  (character) => character.mass > 100
+);
+console.log(charactersWithMassGreaterThanHundred);
 //2. Get characters with height less than 200
+const charactersHeightLessTwoHundredHeight = characters.filter(
+  (character) => character.height < 200
+);
+console.log(charactersHeightLessTwoHundredHeight);
 //3. Get all male characters
+const maleCharacters = characters.filter(
+  (character) => character.gender === "male"
+);
+console.log(maleCharacters);
 //4. Get all female characters
-
+const femaleCharacters = characters.filter(
+  (character) => character.gender === "female"
+);
+console.log(femaleCharacters);
 //***SORT***
 //1. Sort by mass
 //2. Sort by height
