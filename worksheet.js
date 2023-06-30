@@ -71,27 +71,52 @@ const totalCharInCharacters = characters.reduce((acc, el) => {
 const charactersWithMassGreaterThanHundred = characters.filter(
   (character) => character.mass > 100
 );
-console.log(charactersWithMassGreaterThanHundred);
+//console.log(charactersWithMassGreaterThanHundred);
 //2. Get characters with height less than 200
 const charactersHeightLessTwoHundredHeight = characters.filter(
   (character) => character.height < 200
 );
-console.log(charactersHeightLessTwoHundredHeight);
+//console.log(charactersHeightLessTwoHundredHeight);
 //3. Get all male characters
 const maleCharacters = characters.filter(
   (character) => character.gender === "male"
 );
-console.log(maleCharacters);
+//console.log(maleCharacters);
 //4. Get all female characters
 const femaleCharacters = characters.filter(
   (character) => character.gender === "female"
 );
-console.log(femaleCharacters);
+//console.log(femaleCharacters);
+
 //***SORT***
 //1. Sort by mass
+const byMass = characters.sort((a, b) => {
+  return a.mass - b.mass;
+});
+//console.log(byMass);
+
 //2. Sort by height
+const byHeight = characters.sort((a, b) => {
+  return a.height - b.height;
+});
+// console.log(byHeight);
 //3. Sort by name
+const byName = characters.sort((a, b) => {
+  //ascending
+  //   if (a.name < b.name) return -1;
+  //   return 1;
+
+  //descending
+  if (a.name < b.name) return 1;
+  return -1;
+});
+// console.log(byName);
 //4. Sort by gender
+const byGender = characters.sort((a, b) => {
+  if (a.gender === "female") return -1; // return -1 means that this is first
+  return 1;
+});
+console.log(byGender);
 
 //***EVERY***
 //1. Does every character have blue eyes?
@@ -101,6 +126,19 @@ console.log(femaleCharacters);
 
 //***SOME***
 //1. Is there at least one male character?
+const oneMaleCharacter = characters.some(
+  (character) => character.gender === "male"
+);
+// console.log(oneMaleCharacter);
 //2. Is there at least one character with blue eyes?
+const oneBlueEyes = characters.some(
+  (character) => character.eye_color === "blue"
+);
+// console.log(oneBlueEyes);
 //3. Is there at least one character taller than 210?
+const taller210 = characters.some((character) => character.height > 210);
+// console.log(taller210);
 //4. Is there at least one character that has mass less than 50?
+
+const massLess50 = characters.some((character) => character.mass < 50);
+console.log(massLess50);
